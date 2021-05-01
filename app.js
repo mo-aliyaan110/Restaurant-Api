@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express();
-const port = process.env || 7500;
+const port = process.env.port || 7500;
 const mongo = require('mongodb');
 const mongoClient = mongo.MongoClient;
 const mongoUrl = 'mongodb+srv://aliyaan:@123@cluster0.ktoi9.mongodb.net/Edureka?retryWrites=true&w=majority';
 const cors = require('cors');
-const dbName = 'FinalApp';
+const dbName = 'Edureka';
 const chalk = require('chalk');
 const morgan = require('morgan');
 const fs = require('fs');
@@ -25,12 +25,12 @@ app.use(morgan('tiny',{
     stream:fs.createWriteStream('mylogs.logs', {flags:'a'})
 }))
 
-// to see the homepage i.e / or when first time you start the server
-app.get('/', (req,res) =>{
+// // to see the homepage i.e / or when first time you start the server
+// app.get('/', (req,res) =>{
     
-        res.send("<div><a href='http://localhost:7500/location' target='_blank' > Location </a> <br> <br> <a href='http://localhost:7500/cuisine' target='_blank'> Cuisine </a> <br/><br/> <a href='http://localhost:7500/mealtype' target='_blank'> Mealtype </a> <br/><br/> <a href='http://localhost:7500/restaurant' target='_blank'> Restaurant </a>   </div>")
+//         res.send("<div><a href='http://localhost:7500/location' target='_blank' > Location </a> <br> <br> <a href='http://localhost:7500/cuisine' target='_blank'> Cuisine </a> <br/><br/> <a href='http://localhost:7500/mealtype' target='_blank'> Mealtype </a> <br/><br/> <a href='http://localhost:7500/restaurant' target='_blank'> Restaurant </a>   </div>")
     
-})
+// })
 
 // to see all the cities
 app.get('/location', (req,res) =>{

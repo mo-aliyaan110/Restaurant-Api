@@ -1,5 +1,5 @@
-Hello guys, This is the edumato app, all about the restaurants. Here you can search your restaurants by city, cuisine and by many other things.
-
+This is the Backend of our Zomato Lookalike website.
+This website consists of following api's
 This app contains many API's such as
 1) Restaurant API - To get all the restaurants
 2) Location API - To get all the city
